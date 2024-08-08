@@ -7,7 +7,7 @@ import axios from "axios"
 import { URL } from "../url"
 import HomePosts from "../components/HomePosts"
 import Loader from "../components/Loader"
-
+import nf from '../assets/404-error-page-with-explorer-man-illustration-on-white-background-vector.jpg'
 
 const MyBlogs = () => {
     const {search}=useLocation()
@@ -56,7 +56,7 @@ const MyBlogs = () => {
           </Link>
           </>
           
-        )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
+        )):<h3 className="text-center font-bold mt-16">No posts available <img className="w-full h-full boxi" src={nf} alt='nf'/></h3> }
         </div>
         <Footer/>
     </div>

@@ -60,7 +60,7 @@ const Home = () => {
           </Link>
           </>
           
-        )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
+        )):<h3 className="text-center font-bold mt-16">No posts available <img className="w-full h-full boxi" src={nf} alt='nf'/></h3>}
     </div>
     <Footer/>
     </>
