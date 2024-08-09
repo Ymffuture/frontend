@@ -4,20 +4,19 @@ import { useState } from "react";
 import axios from "axios";
 import { URL } from "../url";
 import { toast, Toaster } from "react-hot-toast";
-import { Button, Spinner } from "react-bootstrap"; // Import Button and Spinner from react-bootstrap
-import { FaUser, FaEnvelope, FaLock } from "react-icons/fa"; // Import icons for username, email, and password
-
+import { Button, Spinner } from "react-bootstrap";
+import { FaUser, FaEnvelope, FaLock } from "react-icons/fa"; 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
 
   const handleRegister = async () => {
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{6,20}$/;
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{4,8}$/;
 
     if (username.length < 4) {
       return toast.error("Username must be at least 4 letters long", { duration: 5000 });
@@ -29,7 +28,7 @@ const Register = () => {
 
     if (!passwordRegex.test(password)) {
       return toast.error(
-        "Password must contain one uppercase, one lowercase, one number, one special character, and be 6 to 20 characters long",
+        "Password must contain one uppercase, one lowercase, one number, one special character, and be 4 to 8 characters long",
         { duration: 5000 }
       );
     }
@@ -75,7 +74,7 @@ const Register = () => {
       <div className="w-full flex justify-center items-center h-[80vh]">
         <Toaster />
         <div className="flex flex-col justify-center items-center space-y-4 w-[85%] md:w-[25%]">
-          <h1 className="text-xl text-left p-4 w-[100%] text-center">Create an account</h1>
+          <h1 className="text-xl p-4 w-[100%] text-center">Create an account</h1>
           <div className="relative w-full">
             <FaUser className="absolute inset-y-0 left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
             <input
