@@ -92,6 +92,7 @@ const Register = () => {
                   className="w-full pl-12 py-2 border-2 border-[#8080805e] outline-0 rounded"
               type="email"
               placeholder="email"
+              
             />
           </div>
           <div className="relative w-full">
