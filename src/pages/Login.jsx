@@ -105,6 +105,16 @@ const Login = () => {
               <Link to="/register">Register</Link>
             </p>
           </div>
+          <div className="flex gap-2">
+
+          <p className="text-gray-500 hover:text-[#C80036]">
+          <Link to='/resetpassword'> Forgot?</Link>
+          </p>
+          Password 
+         
+          </div>
+          
+      
         </div>
       </div>
       <Footer />

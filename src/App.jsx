@@ -11,7 +11,7 @@ import {  UserContextProvider } from './context/UserContext'
 import MyBlogs from './pages/MyBlogs'
 import { useEffect } from 'react';
 import './App.css'
-
+import ResetPassword from './pages/ResetPassword';
 
 
 const App = () => {
@@ -44,6 +44,7 @@ const App = () => {
       <Route exact path="/" element={<Home/>}/>
       <Route exact path="/login" element={<Login/>}/>
       <Route exact path="/register" element={<Register/>}/>
+      <Route exact path="/resetpassword" element={<ResetPassword/>}/>
       <Route exact path="/write" element={<CreatePost/>}/>
       <Route exact path="/posts/post/:id" element={<PostDetails/>}/>
       <Route exact path="/edit/:id" element={<EditPost/>}/>

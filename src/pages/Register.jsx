@@ -6,6 +6,7 @@ import { URL } from "../url";
 import { toast, Toaster } from "react-hot-toast";
 import { Button, Spinner } from "react-bootstrap";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa"; 
+
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ const Register = () => {
 
   const handleRegister = async () => {
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{4,8}$/;
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{6,8}$/;
 
     if (username.length < 4) {
       return toast.error("Username must be at least 4 letters long", { duration: 5000 });
@@ -28,7 +29,7 @@ const Register = () => {
 
     if (!passwordRegex.test(password)) {
       return toast.error(
-        "Password must contain one uppercase, one lowercase, one number, one special character, and be 4 to 8 characters long",
+        "Password must contain one uppercase, one lowercase, one number, one special character, and be 6 to 8 characters long",
         { duration: 5000 }
       );
     }
@@ -52,7 +53,7 @@ const Register = () => {
         }
       );
       // Add a delay before navigating
-      await new Promise(resolve => setTimeout(resolve, 3000)); // 3-second delay
+      await new Promise(resolve => setTimeout(resolve, 5000)); // 3-second delay
       navigate("/login");
     } catch (err) {
       toast.error("Registration failed. Please try again.");
@@ -137,6 +138,10 @@ const Register = () => {
             <p>Already have an account?</p>
             <p className="text-gray-500 hover:text-[#C80036]">
               <Link to="/login">Login</Link>
+            </p>
+            <p>
+             
+
             </p>
           </div>
         </div>
