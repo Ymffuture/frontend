@@ -28,7 +28,7 @@ const Login = () => {
       axios.post(`${URL}/api/auth/login`, { email, password }, { withCredentials: true }),
       {
         loading: "Logging in...",
-        loading: "Logging in...",
+      
         success: (res) => {
           if (res.data) {
             setUser(res.data);
@@ -67,7 +67,7 @@ const Login = () => {
             <FaEnvelope className="absolute inset-y-0 left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
             <input
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-12 py-2 border-2 border-black outline-0"
+            className="w-full pl-12 py-2 border-2 border-[#8080805e] outline-0 rounded"
               type="text"
               placeholder="email"
             />
@@ -76,7 +76,7 @@ const Login = () => {
             <FaLock className="absolute inset-y-0 left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
             <input
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-12 py-2 border-2 border-black outline-0"
+                 className="w-full pl-12 py-2 border-2 border-[#8080805e] outline-0 rounded"
               type={showPassword ? "text" : "password"} // Toggle password visibility
               placeholder="password"
             />

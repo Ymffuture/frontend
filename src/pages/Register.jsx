@@ -80,7 +80,7 @@ const Register = () => {
             <FaUser className="absolute inset-y-0 left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
             <input
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full pl-12 py-2 border-2 border-black outline-0"
+                  className="w-full pl-12 py-2 border-2 border-[#8080805e] outline-0 rounded"
               type="text"
               placeholder="username"
             />
@@ -89,7 +89,7 @@ const Register = () => {
             <FaEnvelope className="absolute inset-y-0 left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
             <input
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full pl-12 py-2 border-2 border-black outline-0"
+                  className="w-full pl-12 py-2 border-2 border-[#8080805e] outline-0 rounded"
               type="email"
               placeholder="email"
             />
@@ -98,7 +98,7 @@ const Register = () => {
             <FaLock className="absolute inset-y-0 left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
             <input
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full pl-12 py-2 border-2 border-black outline-0"
+              className="w-full pl-12 py-2 border-2 border-[#8080805e] outline-0 rounded"
               type={showPassword ? "text" : "password"}
               placeholder="password"
             />

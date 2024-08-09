@@ -20,16 +20,18 @@ const Navbar = () => {
   
   return (
     <div className="flex header items-center justify-between px-6 md:px-[200px] py-10">
-      <h1 className="text-lg md:text-2xl font-extrabold opacity-60 p-4">
+      <h1 className="text-lg md:text-2xl font-extrabold opacity-80 p-4">
         <Link to="/">BLOG<span className="text-[#C80036]">iq</span></Link>
       </h1>
-      <p className="font-bold uppercase text-[gray] ">{user.email}</p>
-     
+      
+      
       {path === "/" && (
         <div className="flex justify-center items-center space-x-0">
           <p onClick={() => navigate(prompt ? `?search=${prompt}` : "/")} className="cursor-pointer">
             <BsSearch />
+            
           </p>
+          
           <input
             onChange={(e) => setPrompt(e.target.value)}
             className="outline-none px-3"
@@ -50,6 +52,7 @@ const Navbar = () => {
               </p>
               {menu && <Menu />}
             </div>
+            <p className="font-bold uppercase text-[gray]">{user.email}</p>
           </>
         ) : (
           <>
