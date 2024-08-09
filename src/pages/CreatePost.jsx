@@ -75,7 +75,7 @@ const CreatePost = () => {
             toast.success("Post created successfully!");
             navigate("/posts/post/" + res.data._id);
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             toast.error("Failed to create post!");
         }
     };
