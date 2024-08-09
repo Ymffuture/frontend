@@ -15,6 +15,7 @@ const CreatePost = () => {
     const { user } = useContext(UserContext);
     const [cat, setCat] = useState("");
     const [cats, setCats] = useState([]);
+    const [fileName, setFileName] = useState("");
 
     const navigate = useNavigate();
 
@@ -29,6 +30,12 @@ const CreatePost = () => {
         updatedCats.push(cat);
         setCat("");
         setCats(updatedCats);
+    };
+
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        setFile(file);
+        setFileName(file ? file.name : "");
     };
 
     const handleCreate = async (e) => {
@@ -79,18 +86,27 @@ const CreatePost = () => {
             <div className='px-6 md:px-[200px] mt-8'>
                 <h1 className='font-bold md:text-2xl text-xl p-4'>Create a post</h1>
                 <Toaster /> {/* This will show toast notifications */}
-                <form className='w-full flex flex-col space-y-4 md:space-y-8 mt-4 bg-[#f5f5f5] p-4 rounded'>
+                <form className='w-full flex flex-col space-y-4 md:space-y-8 mt-4 p-4 rounded'>
                     <input
                         onChange={(e) => setTitle(e.target.value)}
                         type="text"
                         placeholder='Enter post title'
                         className='px-4 py-2 outline-none'
                     />
-                    <input
-                        onChange={(e) => setFile(e.target.files[0])}
-                        type="file"
-                        className='px-4'
-                    />
+
+                    {/* Custom File Input */}
+                    <div className="flex items-center space-x-4">
+                        <label className="cursor-pointer bg-[#360055] text-white px-4 py-2 rounded font-semibold hover:bg-gray-500">
+                            <input
+                                type="file"
+                                onChange={handleFileChange}
+                                className="hidden"
+                            />
+                           Upload
+                        </label>
+                        <span className="text-gray-600">{fileName || "You can upload more than 1 file"}</span>
+                    </div>
+
                     <div className='flex flex-col'>
                         <div className='flex items-center space-x-4 md:space-x-8'>
                             <input

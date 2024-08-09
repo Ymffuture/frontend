@@ -96,7 +96,7 @@ const PostDetails = () => {
         <Navbar/>
         {loader?<div className="h-[80vh] flex justify-center items-center w-full"><Loader/></div>:<div className="px-8 md:px-[200px] mt-8">
         <div className="flex justify-between items-center">
-         <h1 className="text-2xl font-bold text-black md:text-3xl">{post.title}</h1>
+         <h1 className="text-2xl font-bold md:text-3xl p-4">{post.title}</h1>
          {user?._id===post?.userId && <div className="flex items-center justify-center space-x-2">
             <p className="cursor-pointer" onClick={()=>navigate("/edit/"+postId)} ><BiEdit/></p>
             <p className="cursor-pointer" onClick={handleDeletePost}><MdDelete/></p>
@@ -109,7 +109,7 @@ const PostDetails = () => {
        <p>{new Date(post.updatedAt).toString().slice(16,24)}</p>
        </div>
         </div>
-        <img src={IF+post.photo} className="w-full  mx-auto mt-8" alt=""/>
+        <img src={IF+post.photo} className="w-[30%]  mx-auto mt-8" alt=""/>
          <p className="mx-auto mt-8">{post.desc}</p>
          <div className="flex items-center mt-8 space-x-4 font-semibold">
           <p>Categories:</p>
@@ -133,7 +133,7 @@ const PostDetails = () => {
          {/* write a comment */}
          <div className="w-full flex flex-col mt-4 md:flex-row">
           <input onChange={(e)=>setComment(e.target.value)} type="text" placeholder="Write a comment" className="md:w-[80%] outline-none py-2 px-4 mt-4 md:mt-0"/>
-          <button onClick={postComment} className="bg-[#C80036] text-sm text-white px-2 py-2 md:w-[20%] mt-4 md:mt-0">Add Comment</button>
+          <button onClick={postComment} className="bg-[green] text-sm text-white px-2 py-2 md:w-[20%] mt-4 md:mt-0 rounded">Add Comment</button>
          </div>
         </div>}
         <Footer/>
