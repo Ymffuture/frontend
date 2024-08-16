@@ -8,6 +8,7 @@ import { toast, Toaster } from "react-hot-toast";
 import { Spinner } from "react-bootstrap";
 import { FaEnvelope, FaLock } from "react-icons/fa"; // Import email and password icons
 import '../App.css'
+import BG from '../backgrounds/BgOne'
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -51,6 +52,7 @@ const Login = () => {
 
   return (
     <>
+    <BG/>
       <div className="flex items-center justify-between px-6 md:px-[200px] py-4">
         <h1 className="text-lg md:text-2xl opacity-60 p-4">
           <Link to="/">BLOG<span className="text-[#C80036]">iq</span></Link>

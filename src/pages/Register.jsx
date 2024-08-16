@@ -6,6 +6,8 @@ import { URL } from "../url";
 import { toast, Toaster } from "react-hot-toast";
 import { Button, Spinner } from "react-bootstrap";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa"; 
+import BG from '../backgrounds/BgOne'
+
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -64,6 +66,7 @@ const Register = () => {
 
   return (
     <>
+    <BG/>
       <div className="flex items-center justify-between px-6 md:px-[200px] py-4">
         <h1 className="text-lg md:text-2xl opacity-60 p-4">
           <Link to="/">BLOG<span className="text-[#C80036]">iq</span></Link>
